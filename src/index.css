@@ -1,13 +1,109 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ui.container {
+  display: block;
+  max-width: 100%!important;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.container {
+    width: auto!important;
+    margin-left: 1em!important;
+    margin-right: 1em!important;
+  }
+}
+
+.ui.dropdown {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  outline: 0;
+  text-align: left;
+  -webkit-transition: width .1s ease,-webkit-box-shadow .1s ease;
+  transition: width .1s ease,-webkit-box-shadow .1s ease;
+  transition: box-shadow .1s ease,width .1s ease;
+  transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ui.dropdown .menu {
+  left: 0;
+}
+.ui.dropdown .menu {
+  cursor: auto;
+  position: absolute;
+  display: none;
+  outline: 0;
+  top: 100%;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  margin: 0;
+  padding: 0 0;
+  background: #fff;
+  font-size: 1em;
+  text-shadow: none;
+  text-align: left;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
+  box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  -webkit-transition: opacity .1s ease;
+  transition: opacity .1s ease;
+  z-index: 11;
+  will-change: transform,opacity;
+}
+.visible.transition {
+  display: block!important;
+  visibility: visible!important;
+}
+.transition {
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.ui.dropdown .menu>.item:first-child {
+  border-top-width: 0;
+}
+.ui.dropdown .menu>.item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  border: none;
+  height: auto;
+  text-align: left;
+  border-top: none;
+  line-height: 1em;
+  color: rgba(0,0,0,.87);
+  padding: .78571429rem 1.14285714rem!important;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 400;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-touch-callout: none;
+}
+.ui.dropdown .menu>* {
+  white-space: nowrap;
+}
+
+.ui.dropdown .menu>.item>.description, .ui.dropdown>.text>.description {
+  float: right;
+  margin: 0 0 0 1em;
+  color: rgba(0,0,0,.4);
+}
+
+.ui.dropdown .menu>.item:hover {
+  background: rgb(228, 228, 228);
 }
